@@ -1,0 +1,221 @@
+/*Variavéis de cores*/
+:root {
+  --main1: #ff9f0f;
+  --main2: #f5e93d;
+  --dark: #100F10;
+  --dark2: #1B1B1B;
+  --dark3: #242424;
+}
+
+body {
+  min-height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  background: linear-gradient(207.55deg, #FF8A00 0%, #FED601 100%) !important;
+}
+
+/*Container com todas as especifições do card*/
+
+.login-container {
+  width: 569px;
+  height: 460px;
+  padding: 20px 30px;
+  position: absolute;
+  text-align: center;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-image: linear-gradient(180deg, #1B1B1B 0%, rgba(0, 0, 0, 0.76) 100%);
+  box-shadow: 20px 27px 25px -8px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+}
+
+form {
+  top: 200px;
+}
+
+.login-container h3 {
+  position: relative;
+  left: 4.3vw;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  border-bottom: solid 2px #FED601;
+  width: 80px;
+}
+
+/*Formatações globais*/
+
+main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Bahnschrift;
+
+  color: white;
+}
+
+/*Formatando as Anchors*/
+
+main a {
+  font-size: 8.rem;
+  color: var(--main2);
+  text-decoration-line: none;
+}
+
+main a:hover {
+  color: var(--main1);
+  transition: 0.2s;
+}
+
+
+/* Formataçoes das caixas de texto*/
+
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: auto;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 393px;
+  border: none;
+  border-bottom: 1px solid #D7D7D7;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+  left: 60px;
+}
+
+.form__label {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  left: 60px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--main1), var(--main2));
+  border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: var(--main2);
+  font-weight: 700;
+}
+
+
+/*Formatação dos botoes*/
+
+button {
+  padding: 0.7em 1.7em;
+  background-color: transparent;
+  border-radius: 3px;
+  position: relative;
+  top: 100px;
+  right: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 500;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  color: var(--main2);
+  z-index: 1;
+}
+
+button::before,
+button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--main2);
+  transition: 1s ease;
+}
+
+button::before {
+  top: -1em;
+  left: -1em;
+}
+
+button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+button:hover::before,
+button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+button:hover {
+  color: rgb(10, 25, 30);
+}
+
+button:active {
+  filter: brightness(.8);
+}
+
+/* mensagem de erro */
+
+.e {
+  top: 52%;
+  padding: 10px;
+  border-radius: 10px;
+  left: 39%;
+  width: 325px;
+  z-index: 100;
+  position: absolute;
+  background-color: #e03019;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (max-width:769px) {
+
+  .login-container {
+    height: 500px;
+    width: 350px;
+  }
+}

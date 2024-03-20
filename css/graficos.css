@@ -1,0 +1,191 @@
+main{
+    position: relative;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.comeco {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    margin-bottom: -80px;
+  }
+  
+  .intro {
+    width: 100%;
+    transition: .3s ease;
+    padding: 30px 40px;
+    background: #e32636e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.34);
+  }
+  
+  .intro h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+  
+    color: #ffffff;
+  }
+  
+  input[type='text']{
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    border: none;
+    border-bottom: 1px rgb(158, 158, 158) solid;
+    outline: 0;
+    font-size: 15px;
+    color: rgb(22, 22, 22);
+    padding: 7px 5px;
+    transition: .3s ease-in-out;
+  }
+  input[type='submit']{
+    padding: 10px 30px;
+    color: white;
+    background-color: #de1536;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+
+#grafico1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-height: 420px;
+    background: white;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.070));
+}
+
+#donutchart{
+    transform: scale(1.5);
+}
+
+.graf{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 0 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+#grafico2{
+    padding: 10px;
+    background: white;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.070));
+}
+
+#menores{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 150px;
+}
+
+#tabela{
+    padding: 50px;
+    position: relative;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.070));
+}
+
+#tabela a{
+    padding: 10px 30px;
+    color: white;
+    background-color: #de1536;
+
+}
+
+.button{
+    margin-bottom: 30px;
+}
+
+
+#curve_chart{
+    width: 1100px; 
+    height: 400px;
+}
+
+.first{
+    background-color: #b11313;
+}
+
+
+.consulta {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 700px;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    cursor: default;
+    transition: .5s;
+}
+
+.consulta thead tr {
+    background-color: #e32636;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.consulta th,
+.consulta td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.consulta tbody tr:last-of-type {
+    border-bottom: 1px solid #dddddd;
+    transition: .3s;}
+
+.consulta tbody tr {
+    background-color: #f6f6f6;
+}
+.consulta tbody tr:hover {
+    background-color: #e8e8e8;
+  }
+
+th{
+    text-align: center;
+}
+
+@media (max-width: 1450px){
+    main{
+        left: 0;
+    }
+    
+}
+
+@media (max-width: 1150px){
+    #curve_chart{
+        width: 500px; 
+        height: 400px;
+    }
+    .consulta {
+        min-width: 400px !important;
+    }
+
+}

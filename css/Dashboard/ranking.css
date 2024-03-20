@@ -1,0 +1,192 @@
+body {
+  background-image: url(img/Fundo-Ranking.jpg);
+  background-attachment: fixed;
+}
+
+#tudo {
+  position: relative;
+}
+
+.intro {
+  /* Ret Vermelho */
+
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.search{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#botao{
+  padding: 9px 50px;
+  border: none;
+  background: #e32636;
+  font-size: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.179);
+  transition: .3s ease;
+}
+#botao:hover{
+  background: #d11d2c;
+}
+
+.procura{
+  margin-left: 300px;
+}
+
+#tudo .titulo{
+  transition: .3s ease;
+  min-width: 1200px;
+  padding: 30px 40px;
+  background: #e32636;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  position: absolute;
+}
+#tudo .titulo h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+
+  color: #ffffff;
+}
+
+.tabelinha{
+  width: 800px;
+  height: 500px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+#principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 1200px;
+  border-radius: 2px 2px 0 0;
+  margin-left: 300px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  cursor: default;
+  transition: .5s;
+}
+
+.content-table thead tr {
+  background-color: #e32636;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 1px solid #dddddd;
+  transition: .3s;
+}
+
+.content-table tbody tr {
+  background-color: #f6f6f6;
+}
+
+.content-table tbody tr:hover {
+  background-color: #e8e8e8;
+}
+
+
+@media (max-width: 1800px) {
+  .content-table, #tudo .titulo {
+    min-width: 1000px;
+  }
+  
+}
+
+@media (max-width: 1350px) {
+  .content-table, #tudo .titulo {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .content-table, #tudo .titulo {
+    min-width: 600px;
+  }
+}
+
+[include*="form-input-select()"]::before {
+  bottom: 55%;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #D6D6D6;
+}
+[include*="form-input-select()"]::after {
+  border-width: 8px 6.5px 0 6.5px;
+  border-top-color: #D6D6D6;
+  top: 55%;
+}
+@-moz-document url-prefix() {
+  [include*="form-input-select()"] {
+    border-right: 2px solid #E6E6E6;
+  }
+}
+
+[include*="form-input-select()"]:hover select:focus {
+  outline-color: transparent;
+  border-color: #e32636;
+  box-shadow: 0 1px 2px #b71f2c inset;
+}
+[include*="form-input-select()"]:hover::before {
+  border-bottom-color: #e32636;
+}
+[include*="form-input-select()"]:hover::after {
+  border-top-color: #e32636;
+}
+[include*="form-input-select()"] select {
+  border: 3px solid #E6E6E6;
+  border-radius: 0;
+  font-weight: 400;
+  color: inherit;
+  padding: 9px 150px;
+  line-height: normal;
+  transition: border-color 0.2s ease, outline 0.2s ease;
+}
+[include*="form-input-select()"] select:focus {
+  box-shadow: 0 1px 2px #c41d2b inset;
+  outline: 2px solid #e32636;
+  outline-offset: -3px;
+}
+[include*="form-input-select()"] select[disabled], [include*="form-input-select()"] select:disabled {
+  opacity: 0.4;
+}
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+}

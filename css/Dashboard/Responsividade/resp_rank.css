@@ -1,0 +1,27 @@
+@media (max-width: 1440px) {
+    .intro, .procura{
+        margin-left: 0 !important;
+    }
+
+    .intro{
+        margin-top: 50px;
+    }
+
+    .content-table{
+        margin-left: 0 !important;
+    }
+
+    [include*="form-input-select()"] select {
+        padding: 9px 70px !important;
+    }
+}
+
+@media (max-width: 1000px){
+    .content-table, #tudo .titulo {
+        min-width: 500px;
+      }    
+
+    [include*="form-input-select()"] select {
+        padding: 9px 30px !important;
+    }
+}

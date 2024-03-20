@@ -1,0 +1,389 @@
+/*Variavéis de cores*/
+:root {
+  --main1: #ff9f0f;
+  --main2: #f5e93d;
+  --dark: #100F10;
+  --dark2: #1B1B1B;
+  --dark3: #242424;
+}
+
+/*Container com todas as especifições do card*/
+
+.login-container {
+  width: 400px;
+  height: 850px;
+  padding: 20px 30px;
+
+  text-align: center;
+  position: relative;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 2px solid #ff9f0f;
+  ;
+}
+
+/*Alterando o tamanho do logo*/
+
+main img {
+  width: 70%;
+
+}
+
+/*Formatações globais*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Bahnschrift;
+
+  color: white;
+}
+
+/*Formatando as Anchors*/
+
+main a {
+  font-size: 8.rem;
+  color: var(--main2);
+  text-decoration-line: none;
+}
+
+main a:hover {
+  color: var(--main1);
+  transition: 0.2s;
+}
+
+
+
+/* Formataçoes das caixas de texto*/
+
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  margin-top: 10px;
+  width: 100%;
+  max-width: auto;
+
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--main1), var(--main2));
+  border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: var(--main2);
+  font-weight: 700;
+}
+
+/*Formatação dos botoes*/
+
+.main_div {
+  --color: var(--main2);
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.main_div::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  top: -7px;
+  left: -7px;
+  z-index: -5;
+  border-top: 3px solid var(--color);
+  border-left: 3px solid var(--color);
+  transition: 0.5s;
+}
+
+.main_div::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  bottom: -7px;
+  right: -7px;
+  z-index: -5;
+  border-right: 3px solid var(--color);
+  border-bottom: 3px solid var(--color);
+  transition: 0.5s;
+}
+
+.main_div:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.main_div:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.main_div #button {
+  padding: 0.7em 2em;
+  font-size: 16px;
+  background: #222222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Formatação da checkbox */
+
+
+.cbx {
+  position: relative;
+  top: 1px;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #c8ccd4;
+  border-radius: 3px;
+  margin-top: 15px;
+
+  transition: background 0.1s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.cbx:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  width: 7px;
+  height: 14px;
+  opacity: 0;
+  transform: rotate(45deg) scale(0);
+  border-right: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  transition: all 0.3s ease;
+  transition-delay: 0.15s;
+
+}
+
+.lbl {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#cbx:checked~.cbx {
+  border-color: transparent;
+  background: var(--main2);
+  animation: jelly 0.6s ease;
+}
+
+#cbx:checked~.cbx:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+.cntr {
+  position: relative;
+}
+
+@keyframes jelly {
+  from {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.hidden-xs-up {
+  display: none !important;
+}
+
+
+/*Alterando a posição do texto da checkbox*/
+.cbxtxt {
+  transform: translateY(-20px);
+  margin-left: 20px;
+
+}
+
+/* NAVBAR */
+
+.btn-mobile {
+  display: none;
+}
+
+/* Botão de Login */
+.login {
+  display: none;
+}
+
+
+body {
+  background-attachment: fixed;
+  background-image: linear-gradient(45deg, var(--dark), var(--dark3));
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilização da navbar */
+header img {
+  height: 50px;
+  transition: all .3s ease 0s;
+  left: 100px;
+}
+
+header img:hover {
+  height: 82px;
+}
+
+.cad a {
+  display: none;
+}
+
+
+.l,
+.link {
+  display: none;
+}
+
+#picture__input {
+  display: none;
+}
+
+.picture {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 200px;
+  aspect-ratio: 16/9;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed currentcolor;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  outline: none;
+  overflow: hidden;
+}
+
+.picture:hover {
+  color: #777;
+  background: #ccc;
+}
+
+.picture:active {
+  border-color: turquoise;
+  color: turquoise;
+  background: #eee;
+}
+
+.picture:focus {
+  color: #777;
+  background: #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture__img {
+  max-width: 400px;
+}
+
+
+
+@media screen and (max-width:769px) {
+
+  .login-container {
+    height: 500px;
+    width: 350px;
+  }
+
+  header img {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width:1025px) {
+  header img {
+    display: block;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+  }
+}

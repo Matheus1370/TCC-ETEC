@@ -1,0 +1,919 @@
+NodeMCU_RC522_Mysql
+
+-------------------------------------------------------------------------------
+getUID
+
+<?php
+	$UIDresult=$_POST["UIDresult"];
+	$Write="<?php $" . "UIDresult='" . $UIDresult . "'; " . "echo $" . "UIDresult;" . " ?>";
+	file_put_contents('UIDContainer.php',$Write);
+?>
+-------------------------------------------------------------------------------
+UIDContainer
+
+<?php $UIDresult=''; echo $UIDresult; ?>
+-------------------------------------------------------------------------------
+home
+
+<?php
+	$Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
+	file_put_contents('UIDContainer.php',$Write);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script>
+		<style>
+		html {
+			font-family: Arial;
+			display: inline-block;
+			margin: 0px auto;
+			text-align: center;
+		}
+
+		ul.topnav {
+			list-style-type: none;
+			margin: auto;
+			padding: 0;
+			overflow: hidden;
+			background-color: #4CAF50;
+			width: 70%;
+		}
+
+		ul.topnav li {float: left;}
+
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}
+
+		ul.topnav li a.active {background-color: #333;}
+
+		ul.topnav li.right {float: right;}
+
+		@media screen and (max-width: 600px) {
+			ul.topnav li.right, 
+			ul.topnav li {float: none;}
+		}
+		
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		</style>
+		
+		<title>Home : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+	</head>
+	
+	<body>
+		<h2>NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<ul class="topnav">
+			<li><a class="active" href="home.php">Home</a></li>
+			<li><a href="user_data.php">User Data</a></li>
+			<li><a href="registration.php">Registration</a></li>
+			<li><a href="read_tag.php">Read Tag ID</a></li>
+		</ul>
+		<br>
+		<h3>Welcome to NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h3>
+		
+		<img src="home ok ok.jpg" alt="" style="width:55%;">
+	</body>
+</html>
+-------------------------------------------------------------------------------
+database
+
+<?php
+	class Database
+	{
+		private static $dbName = 'rfidwifi' ;
+		private static $dbHost = 'localhost' ;
+		private static $dbUsername = 'root';
+		private static $dbUserPassword = '';
+		 
+		private static $cont  = null;
+		 
+		public function __construct() {
+			die('Init function is not allowed');
+		}
+		 
+		public static function connect()
+		{
+		   // One connection through whole application
+		   if ( null == self::$cont )
+		   {     
+			try
+			{
+			  self::$cont =  new PDO( "mysql:host=".self::$dbHost.";"."dbname=".self::$dbName, self::$dbUsername, self::$dbUserPassword); 
+			}
+			catch(PDOException $e)
+			{
+			  die($e->getMessage()); 
+			}
+		   }
+		   return self::$cont;
+		}
+		 
+		public static function disconnect()
+		{
+			self::$cont = null;
+		}
+	}
+?>
+-------------------------------------------------------------------------------
+user_data
+
+<?php
+	$Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
+	file_put_contents('UIDContainer.php',$Write);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script>
+		<style>
+		html {
+			font-family: Arial;
+			display: inline-block;
+			margin: 0px auto;
+			text-align: center;
+		}
+
+		ul.topnav {
+			list-style-type: none;
+			margin: auto;
+			padding: 0;
+			overflow: hidden;
+			background-color: #4CAF50;
+			width: 70%;
+		}
+
+		ul.topnav li {float: left;}
+
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}
+
+		ul.topnav li a.active {background-color: #333;}
+
+		ul.topnav li.right {float: right;}
+
+		@media screen and (max-width: 600px) {
+			ul.topnav li.right, 
+			ul.topnav li {float: none;}
+		}
+		
+		.table {
+			margin: auto;
+			width: 90%; 
+		}
+		
+		thead {
+			color: #FFFFFF;
+		}
+		</style>
+		
+		<title>User Data : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+	</head>
+	
+	<body>
+		<h2>NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<ul class="topnav">
+			<li><a href="home.php">Home</a></li>
+			<li><a class="active" href="user_data.php">User Data</a></li>
+			<li><a href="registration.php">Registration</a></li>
+			<li><a href="read_tag.php">Read Tag ID</a></li>
+		</ul>
+		<br>
+		<div class="container">
+            <div class="row">
+                <h3>User Data Table</h3>
+            </div>
+            <div class="row">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr bgcolor="#10a0c5" color="#FFFFFF">
+                      <th>Name</th>
+                      <th>ID</th>
+					  <th>Gender</th>
+					  <th>Email</th>
+                      <th>Mobile Number</th>
+					  <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                   include 'database.php';
+                   $pdo = Database::connect();
+                   $sql = 'SELECT * FROM tbrfidwifi ORDER BY name ASC';
+                   foreach ($pdo->query($sql) as $row) {
+                            echo '<tr>';
+                            echo '<td>'. $row['name'] . '</td>';
+                            echo '<td>'. $row['id'] . '</td>';
+                            echo '<td>'. $row['gender'] . '</td>';
+							echo '<td>'. $row['email'] . '</td>';
+							echo '<td>'. $row['mobile'] . '</td>';
+							echo '<td><a class="btn btn-success" href="user_data_edit_page.php?id='.$row['id'].'">Edit</a>';
+							echo ' ';
+							echo '<a class="btn btn-danger" href="user_data_delete_page.php?id='.$row['id'].'">Delete</a>';
+							echo '</td>';
+                            echo '</tr>';
+                   }
+                   Database::disconnect();
+                  ?>
+                  </tbody>
+				</table>
+			</div>
+		</div> <!-- /container -->
+	</body>
+</html>
+-------------------------------------------------------------------------------
+user_data_edit_page
+
+<?php
+    require 'database.php';
+    $id = null;
+    if ( !empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+    }
+     
+    $pdo = Database::connect();
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$sql = "SELECT * FROM tbrfidwifi where id = ?";
+	$q = $pdo->prepare($sql);
+	$q->execute(array($id));
+	$data = $q->fetch(PDO::FETCH_ASSOC);
+	Database::disconnect();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script>
+		
+		<style>
+		html {
+			font-family: Arial;
+			display: inline-block;
+			margin: 0px auto;
+		}
+		
+		textarea {
+			resize: none;
+		}
+
+		ul.topnav {
+			list-style-type: none;
+			margin: auto;
+			padding: 0;
+			overflow: hidden;
+			background-color: #4CAF50;
+			width: 70%;
+		}
+
+		ul.topnav li {float: left;}
+
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}
+
+		ul.topnav li a.active {background-color: #333;}
+
+		ul.topnav li.right {float: right;}
+
+		@media screen and (max-width: 600px) {
+			ul.topnav li.right, 
+			ul.topnav li {float: none;}
+		}
+		</style>
+		
+		<title>Edit : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+		
+	</head>
+	
+	<body>
+
+		<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		
+		<div class="container">
+     
+			<div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
+				<div class="row">
+					<h3 align="center">Edit User Data</h3>
+					<p id="defaultGender" hidden><?php echo $data['gender'];?></p>
+				</div>
+		 
+				<form class="form-horizontal" action="user_data_edit_tb.php?id=<?php echo $id?>" method="post">
+					<div class="control-group">
+						<label class="control-label">ID</label>
+						<div class="controls">
+							<input name="id" type="text"  placeholder="" value="<?php echo $data['id'];?>" readonly>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Name</label>
+						<div class="controls">
+							<input name="name" type="text"  placeholder="" value="<?php echo $data['name'];?>" required>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Gender</label>
+						<div class="controls">
+							<select name="gender" id="mySelect">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Email Address</label>
+						<div class="controls">
+							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" required>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Mobile Number</label>
+						<div class="controls">
+							<input name="mobile" type="text"  placeholder="" value="<?php echo $data['mobile'];?>" required>
+						</div>
+					</div>
+					
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">Update</button>
+						<a class="btn" href="user_data.php">Back</a>
+					</div>
+				</form>
+			</div>               
+		</div> <!-- /container -->	
+		
+		<script>
+			var g = document.getElementById("defaultGender").innerHTML;
+			if(g=="Male") {
+				document.getElementById("mySelect").selectedIndex = "0";
+			} else {
+				document.getElementById("mySelect").selectedIndex = "1";
+			}
+		</script>
+	</body>
+</html>
+-------------------------------------------------------------------------------
+user_data_edit_tb
+
+<?php
+    require 'database.php';
+ 
+    $id = null;
+    if ( !empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+    }
+     
+    if ( !empty($_POST)) {
+        // keep track post values
+        $name = $_POST['name'];
+		$id = $_POST['id'];
+		$gender = $_POST['gender'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+         
+        $pdo = Database::connect();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "UPDATE tbrfidwifi  set name = ?, gender =?, email =?, mobile =? WHERE id = ?";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($name,$gender,$email,$mobile,$id));
+		Database::disconnect();
+		header("Location: user_data.php");
+    }
+?>
+-------------------------------------------------------------------------------
+user_data_delete_page
+
+<?php
+    require 'database.php';
+    $id = 0;
+     
+    if ( !empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+    }
+     
+    if ( !empty($_POST)) {
+        // keep track post values
+        $id = $_POST['id'];
+         
+        // delete data
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "DELETE FROM tbrfidwifi  WHERE id = ?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($id));
+        Database::disconnect();
+        header("Location: user_data.php");
+         
+    }
+?>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+	<title>Delete : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+</head>
+ 
+<body>
+	<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+
+    <div class="container">
+     
+		<div class="span10 offset1">
+			<div class="row">
+				<h3 align="center">Delete User</h3>
+			</div>
+
+			<form class="form-horizontal" action="user_data_delete_page.php" method="post">
+				<input type="hidden" name="id" value="<?php echo $id;?>"/>
+				<p class="alert alert-error">Are you sure to delete ?</p>
+				<div class="form-actions">
+					<button type="submit" class="btn btn-danger">Yes</button>
+					<a class="btn" href="user_data.php">No</a>
+				</div>
+			</form>
+		</div>
+                 
+    </div> <!-- /container -->
+  </body>
+</html>
+-------------------------------------------------------------------------------
+registration
+
+<?php
+	$Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
+	file_put_contents('UIDContainer.php',$Write);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script>
+		<script src="jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				 $("#getUID").load("UIDContainer.php");
+				setInterval(function() {
+					$("#getUID").load("UIDContainer.php");
+				}, 500);
+			});
+		</script>
+		
+		<style>
+		html {
+			font-family: Arial;
+			display: inline-block;
+			margin: 0px auto;
+		}
+		
+		textarea {
+			resize: none;
+		}
+
+		ul.topnav {
+			list-style-type: none;
+			margin: auto;
+			padding: 0;
+			overflow: hidden;
+			background-color: #4CAF50;
+			width: 70%;
+		}
+
+		ul.topnav li {float: left;}
+
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}
+
+		ul.topnav li a.active {background-color: #333;}
+
+		ul.topnav li.right {float: right;}
+
+		@media screen and (max-width: 600px) {
+			ul.topnav li.right, 
+			ul.topnav li {float: none;}
+		}
+		</style>
+		
+		<title>Registration : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+	</head>
+	
+	<body>
+
+		<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<ul class="topnav">
+			<li><a href="home.php">Home</a></li>
+			<li><a href="user_data.php">User Data</a></li>
+			<li><a class="active" href="registration.php">Registration</a></li>
+			<li><a href="read_tag.php">Read Tag ID</a></li>
+		</ul>
+
+		<div class="container">
+			<br>
+			<div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
+				<div class="row">
+					<h3 align="center">Registration Form</h3>
+				</div>
+				<br>
+				<form class="form-horizontal" action="insertDB.php" method="post" >
+					<div class="control-group">
+						<label class="control-label">ID</label>
+						<div class="controls">
+							<textarea name="id" id="getUID" placeholder="Please Tag your Card / Key Chain to display ID" rows="1" cols="1" required></textarea>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Name</label>
+						<div class="controls">
+							<input id="div_refresh" name="name" type="text"  placeholder="" required>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Gender</label>
+						<div class="controls">
+							<select name="gender">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Email Address</label>
+						<div class="controls">
+							<input name="email" type="text" placeholder="" required>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">Mobile Number</label>
+						<div class="controls">
+							<input name="mobile" type="text"  placeholder="" required>
+						</div>
+					</div>
+					
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">Save</button>
+                    </div>
+				</form>
+				
+			</div>               
+		</div> <!-- /container -->	
+	</body>
+</html>
+-------------------------------------------------------------------------------
+insertDB
+
+<?php
+     
+    require 'database.php';
+ 
+    if ( !empty($_POST)) {
+        // keep track post values
+        $name = $_POST['name'];
+		$id = $_POST['id'];
+		$gender = $_POST['gender'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        
+		// insert data
+        $pdo = Database::connect();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "INSERT INTO tbrfidwifi (name,id,gender,email,mobile) values(?, ?, ?, ?, ?)";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($name,$id,$gender,$email,$mobile));
+		Database::disconnect();
+		header("Location: user_data.php");
+    }
+?>
+-------------------------------------------------------------------------------
+read_tag
+
+<?php
+	$Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
+	file_put_contents('UIDContainer.php',$Write);
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script>
+		<script src="jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				 $("#getUID").load("UIDContainer.php");
+				setInterval(function() {
+					$("#getUID").load("UIDContainer.php");	
+				}, 500);
+			});
+		</script>
+		<style>
+		html {
+			font-family: Arial;
+			display: inline-block;
+			margin: 0px auto;
+			text-align: center;
+		}
+
+		ul.topnav {
+			list-style-type: none;
+			margin: auto;
+			padding: 0;
+			overflow: hidden;
+			background-color: #4CAF50;
+			width: 70%;
+		}
+
+		ul.topnav li {float: left;}
+
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}
+
+		ul.topnav li a.active {background-color: #333;}
+
+		ul.topnav li.right {float: right;}
+
+		@media screen and (max-width: 600px) {
+			ul.topnav li.right, 
+			ul.topnav li {float: none;}
+		}
+		
+		td.lf {
+			padding-left: 15px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+		</style>
+		
+		<title>Read Tag : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+	</head>
+	
+	<body>
+		<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<ul class="topnav">
+			<li><a href="home.php">Home</a></li>
+			<li><a href="user_data.php">User Data</a></li>
+			<li><a href="registration.php">Registration</a></li>
+			<li><a class="active" href="read_tag.php">Read Tag ID</a></li>
+		</ul>
+		
+		<br>
+		
+		<h3 align="center" id="blink">Please Tag to Display ID or User Data</h3>
+		
+		<p id="getUID" hidden></p>
+		
+		<br>
+		
+		<div id="show_user_data">
+			<form>
+				<table  width="452" border="1" bordercolor="#10a0c5" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
+					<tr>
+						<td  height="40" align="center"  bgcolor="#10a0c5"><font  color="#FFFFFF">
+							<b>User Data</b>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td  bgcolor="#f9f9f9">
+							<table width="452"  border="0" align="center" cellpadding="5"  cellspacing="0">
+								<tr>
+									<td width="113" align="left" class="lf">ID</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left">--------</td>
+								</tr>
+								<tr bgcolor="#f2f2f2">
+									<td align="left" class="lf">Name</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left">--------</td>
+								</tr>
+								<tr>
+									<td align="left" class="lf">Gender</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left">--------</td>
+								</tr>
+								<tr bgcolor="#f2f2f2">
+									<td align="left" class="lf">Email</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left">--------</td>
+								</tr>
+								<tr>
+									<td align="left" class="lf">Mobile Number</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left">--------</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<script>
+			var myVar = setInterval(myTimer, 1000);
+			var myVar1 = setInterval(myTimer1, 1000);
+			var oldID="";
+			clearInterval(myVar1);
+
+			function myTimer() {
+				var getID=document.getElementById("getUID").innerHTML;
+				oldID=getID;
+				if(getID!="") {
+					myVar1 = setInterval(myTimer1, 500);
+					showUser(getID);
+					clearInterval(myVar);
+				}
+			}
+			
+			function myTimer1() {
+				var getID=document.getElementById("getUID").innerHTML;
+				if(oldID!=getID) {
+					myVar = setInterval(myTimer, 500);
+					clearInterval(myVar1);
+				}
+			}
+			
+			function showUser(str) {
+				if (str == "") {
+					document.getElementById("show_user_data").innerHTML = "";
+					return;
+				} else {
+					if (window.XMLHttpRequest) {
+						// code for IE7+, Firefox, Chrome, Opera, Safari
+						xmlhttp = new XMLHttpRequest();
+					} else {
+						// code for IE6, IE5
+						xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xmlhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementById("show_user_data").innerHTML = this.responseText;
+						}
+					};
+					xmlhttp.open("GET","read_tag_user_data.php?id="+str,true);
+					xmlhttp.send();
+				}
+			}
+			
+			var blink = document.getElementById('blink');
+			setInterval(function() {
+				blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+			}, 750); 
+		</script>
+	</body>
+</html>
+-------------------------------------------------------------------------------
+read_tag_user_data
+
+<?php
+    require 'database.php';
+    $id = null;
+    if ( !empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+    }
+     
+    $pdo = Database::connect();
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$sql = "SELECT * FROM tbrfidwifi where id = ?";
+	$q = $pdo->prepare($sql);
+	$q->execute(array($id));
+	$data = $q->fetch(PDO::FETCH_ASSOC);
+	Database::disconnect();
+	
+	$msg = null;
+	if (null==$data['name']) {
+		$msg = "The ID of your Card / KeyChain is not registered !!!";
+		$data['id']=$id;
+		$data['name']="--------";
+		$data['gender']="--------";
+		$data['email']="--------";
+		$data['mobile']="--------";
+	} else {
+		$msg = null;
+	}
+?>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <link   href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+	<style>
+		td.lf {
+			padding-left: 15px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+	</style>
+</head>
+ 
+	<body>	
+		<div>
+			<form>
+				<table  width="452" border="1" bordercolor="#10a0c5" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
+					<tr>
+						<td  height="40" align="center"  bgcolor="#10a0c5"><font  color="#FFFFFF">
+						<b>User Data</b></font></td>
+					</tr>
+					<tr>
+						<td bgcolor="#f9f9f9">
+							<table width="452"  border="0" align="center" cellpadding="5"  cellspacing="0">
+								<tr>
+									<td width="113" align="left" class="lf">ID</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left"><?php echo $data['id'];?></td>
+								</tr>
+								<tr bgcolor="#f2f2f2">
+									<td align="left" class="lf">Name</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left"><?php echo $data['name'];?></td>
+								</tr>
+								<tr>
+									<td align="left" class="lf">Gender</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left"><?php echo $data['gender'];?></td>
+								</tr>
+								<tr bgcolor="#f2f2f2">
+									<td align="left" class="lf">Email</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left"><?php echo $data['email'];?></td>
+								</tr>
+								<tr>
+									<td align="left" class="lf">Mobile Number</td>
+									<td style="font-weight:bold">:</td>
+									<td align="left"><?php echo $data['mobile'];?></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<p style="color:red;"><?php echo $msg;?></p>
+	</body>
+</html>
+-------------------------------------------------------------------------------

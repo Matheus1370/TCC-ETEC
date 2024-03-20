@@ -1,0 +1,243 @@
+*{
+  transition: .3s;
+}
+main {
+  display: flex;
+  left: 300px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container1 {
+  position: relative;
+  width: 37vw;
+  height: 100%;
+  background: linear-gradient(350.69deg, #F3F1F1 7.36%, rgba(255, 255, 255, 0.39) 65.6%);
+  padding-left: 80px;
+  background-attachment: fixed;
+}
+
+.welcome {
+  position: relative;
+  left: 59px;
+  top: 59px;
+  width: 278px;
+  height: 59.5px;
+}
+
+.wel1 {
+
+  width: 400.38px;
+  height: 35.7px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #3E435D;
+
+}
+
+.wel2 {
+
+  width: 181.9px;
+  height: 23.8px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  color: #ADA7A7;
+}
+
+.intro {
+  /* Ret Vermelho */
+  position: relative;
+  top: 97px;
+  left: 59px;
+  width: 507px;
+  height: 95px;
+
+  background: #e32636;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.intro h1 {
+  left: 20px;
+  position: absolute;
+  width: 285px;
+  height: 29px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #F1F1F1;
+}
+
+/* Dados / Informações */
+.dados {
+  position: relative;
+  top: 131px;
+  min-width: 507px;
+  height: 87.26px;
+  display: flex;
+  left: 59px;
+  gap: 40.11px;
+}
+
+.dados .quad {
+  position: relative;
+  width: 142.19px;
+  height: 87.26px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.26));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16.26px;
+  padding-left: 21px;
+  transition: .3s ease;
+}
+
+.dados .quad .num-quad {
+  width: 61px;
+  height: 21px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  transition: .2s ease;
+  color: #4F4F4F;
+}
+
+.dados .quad .desc-quad {
+  width: 80.21px;
+  height: 35.7px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  transition: .2s ease;
+  color: #3E435D;
+}
+
+.dados .quad:hover {
+  transform: scale(1.1);
+  background-color: #e32636;
+}
+
+.dados .quad:hover .num-quad,
+.dados .quad:hover .desc-quad {
+  color: #F1F1F1;
+}
+
+/* Imagem */
+.media {
+  top: 110px;
+  left: 59px;
+  position: relative;
+  width: 700px;
+  max-width: 507px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 480px;
+}
+
+.media img{
+  height: 450px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lado Direito da Página */
+.container2 {
+  position: relative;
+
+  width: 50vw;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  padding-top: 154.6px;
+}
+
+.tabelinha{
+  width: 200px;
+  height: 400px;
+}
+
+#principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+#principal .content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 700px;
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  cursor: default;
+  transition: .5s;
+}
+
+#principal .content-table thead tr {
+  background-color: #e32636;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 1px solid #dddddd;
+  transition: .3s;
+}
+
+.content-table tbody tr {
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+.content-table tbody tr:hover {
+  background-color: #e8e8e8;
+}

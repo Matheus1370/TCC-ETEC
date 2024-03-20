@@ -1,0 +1,22 @@
+------------------------------------------------------------------Additional code on Arduino code
+
+String LEDStatResultSend;
+LEDStatResultSend = payloadGet;
+//----------------------------------------Sends LED status feedback data to server
+Serial.println();
+Serial.println("Sending LED Status to Server");
+String postData, LinkSend, SendAddress;
+SendAddress = "NodeMCU_Get_Database/getLEDStatFromNodeMCU.php";
+LinkSend = host + SendAddress;
+postData = "getLEDStatusFromNodeMCU=" + LEDStatResultSend;
+Serial.print("Request Link : ");
+Serial.println(LinkSend);
+http.begin(LinkSend); //--> Specify request destination
+http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //--> Specify content-type header
+int httpCodeSend = http.POST(postData); //--> Send the request
+String payloadSend = http.getString(); //--> Get the response payload
+Serial.print("Response Code : "); //--> If Response Code = 200 means Successful connection, if -1 means connection failed
+Serial.println(httpCodeSend); //--> Print HTTP return code
+Serial.print("Returned data from Server : ");
+Serial.println(payloadSend); //--> Print request response payload
+//----------------------------------------

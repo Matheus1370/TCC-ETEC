@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSystem</title>
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/style_navbar.css">
+    <link rel="stylesheet" href="css/style_footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" href="img/favicon_autosystem.ico">
+    <link rel="stylesheet" href="css/style_sobre.css">
+    <link rel="stylesheet" href="css/style_produto2.css">
+</head>
+
+<body>
+    <a href="index.html"><img class="logo2" src="img/LogoAutoSystemWhite.png" alt="Logo-Empresa"></a>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </label>
+    <!-- Criação da NavBar -->
+    <button id="btn-mobile" class="btn-mobile">Menu</button>
+    <header>
+        <a href="index.html"><img src="img/LogoAutoSystemWhite.png" alt="Logo-Empresa"></a>
+        <nav id="nav">
+            <ul class="links">
+                <li class="l"><a class="link" href="#tudo">Produtos</a></li>
+                <li class="l"><a class="link" href="#content">Sobre</a></li>
+                <li class="l"><a class="link" href="#footer">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="cad">
+            <a class="link" href="Login.php">
+                <button class="login">Login</button>
+            </a>
+        </div>
+    </header>
+    <!-- Animação da Navbar quando descemos a página -->
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 30);
+        })
+    </script>
+
+    <main>
+        <!-- Primeira Parte do Site (Controle de Acesso) -->
+        <section>
+            <div class="comeco">
+                <div class="container-1">
+                    <span class="effect"></span>
+                    <div class="left">
+                        <div class="prod">
+                            <h2>Controle de Acesso</h2>
+                            <!-- <p>Somos uma empresa que visa manter seu negócio em segurança e com uma organização de seus
+                                funcionários/clientes.</p> -->
+                            <p>Segurança e organização são os pontos chave para o seu negócio!</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img src="img/Vetor2.png">
+                    </div>
+                </div>
+                <span class="effect1"></span>
+                <span class="effect2"></span>
+                <span class="effect3"></span>
+                <span class="effect4"></span>
+            </div>
+        </section>
+
+        <!-- Segunda parte do Site (Video) -->
+        <div class="segunda">
+            <div class="content-seg">
+                <h1>Agilidade e usabilidade</h1>
+                <p>A segurança é um dos pilares mais importantes para um bom desempenho e qualidade de uma organização.
+                    Se preocupando com isso, nós da AutoSystem oferecemos sistemas que proporcionam essa segurança de
+                    modo prático e acessível, com funcionalidades exclusivas para cada cliente além de um design moderno
+                    que facilita a navegação e agiliza todo o processo de controle de acesso.
+                    Utilizando tecnologias que garantem a eficiência de nossos produtos, entregamos as melhores
+                    ferramentas para proteger os seu bens materiais.</p>
+            </div>
+            <div class="videozin">
+                <video autoplay loop muted plays-inline class="backvideo">
+                    <source src="videos/Digitar.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- Quarta Parte do Site (Cards) -->
+        <div class="banner">
+            <div class="container-card">
+                <div class="card">
+                    <div class="content-card">
+                        <img src="img/FingerIcon.png">
+                        <h3>Digital</h3>
+                        <p>O acesso por digital reduz os riscos de fraude em até 99%. Quanto a sua aplicabilidade, esse
+                            método é interessante para academias, faculdades e empresas. Com ele, é possível reduzir
+                            imprevistos, como esquecimento e perdas de senhas e cartões, além de permitir maior
+                            agilidade no momento do acesso.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content-card">
+                        <img src="img/CardIcon.png">
+                        <h3>Cartão</h3>
+                        <p>O cartão de acesso é uma das soluções mais tradicionais para o controle de acesso. Geralmente
+                            em forma de crachá de identificação, esse objeto permite que se libere o acesso do portador
+                            ao passá-lo em uma catraca.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content-card">
+                        <img src="img/FaceIcon.png">
+                        <h3>Reconhecimento Facial</h3>
+                        <p>Classificado como um tipo de acesso biométrico, o reconhecimento facial permite identificar
+                            os indivíduos com agilidade e em diferentes distâncias. Seu funcionamento consiste no uso de
+                            câmeras de vigilância que, por meio de algoritmos específicos, identificam características
+                            faciais e as comparam com diversos dados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <!--TERCEIRA PARTE DO SITE  (PRODUTO)-->
+    <div class="titulo">
+        <h4>Nosso Produto<br><span class="subtitulo">O que temos a oferecer:</h4>
+    </div>
+
+
+    <div id="tudo">
+
+
+        <div class="esquerda">
+            <div class="segundo-bloco">
+                <img class="joystick" width="480" height="290" src="img/joystick.png">
+
+                <div class="textoanimado"><div class="lado-esquerdo"><img src="img/LogoAutoSystemWhite 2.png" width="50px"
+                        class="icone-autosys"><span class="primeiraletra-titulo">S</span>egurança</div>
+                    <p class="texto-prod"> Um dos pilares de nossa empresa é conseguir entregar a você cliente o máximo de segurança e confiabilidade, o nosso produto consegue conceder ao local o máximo de segurança e credibilidade dos dados e dos acessos aos locais.</p>
+
+                </div>
+
+
+            </div>
+            <img class="cubo" width="412" height="430" src="img/cubo.png" class="cubo">
+        </div>
+
+
+        <div class="direita">
+            <div class="primeiro-bloco">
+                <div class="lado-direito"> <img src="img/LogoAutoSystemWhite 2.png" width="50px"
+                        class="icone-autosys"><span class="primeiraletra-titulo">G</span>amificação
+                    <p class="texto-prod">Um de nossos diferenciais das demais empresas de controle de acessos é a inserção da gamificação dentro de nossos sistemas.
+                        Estudos e pesquisas mostram que o processo de gamificação gera uma competição saudável, pois, o competidor fica instigado e é estimulado a resolver desafios.
+                     
+                    </p>
+                </div>
+            </div>
+
+            <img class="cadeado" width="612" height="408" src="img/cadeado.png" class="joystick">
+
+            <div class="terceiro-bloco">
+                <div class="lado-direito"><img src="img/LogoAutoSystemWhite 2.png" width="50px"
+                        class="icone-autosys"><span class="primeiraletra-titulo">A</span>daptabilidade
+                    <p class="texto-prod"> Nosso produto e nossos sistemas podem ser adaptado a necessidade de cada cliente, conseguimos assim arrumar soluções e extrair o melhor possível dos mesmos, possuímos designs que são acessíveis, além de serem intuitivos e de fácil compreensão.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-------------------------------------------------- SOBRE NÓS ----------------------------------------------------------->
+
+    <section id="content">
+        <h1 class="title">Sobre nós</h1>
+        <div class="container">
+            <div class="sobre">
+                <h1>Controle de acesso</h1>
+                <img src="img/ControleDeAcessoImg.png">
+                <p class="t">Mas afinal, o que é um controle de acesso?<br></p>
+                <p>Um controle de acesso tem como principal função o gerenciamento do acesso a determinados
+                    ambientes, especialmente em locais
+                    onde exista um fluxo elevado de pessoas, materiais e veículos.
+                    O principal objetivo dos sistemas de controle de acesso é impedir a entrada de pessoas não
+                    autorizadas, aumentando a segurança
+                    e garantindo a integridade de pessoas e bens.</p>
+            </div>
+            <div class="sobre">
+                <h1 class="h">Segurança</h1>
+                <img src="img/SegurancaImg.png">
+                <p class="t">Quais os nossos objetivos como empresa de segurança?<br></p>
+                <p>Toda empresa necessita de uma atenção redobrada na formação do seu método de segurança, o nosso
+                    intuito como empresa é
+                    poder entregar modernidade, eficiência e facilidade, para que consequentemente nós consigamos
+                    apresentar
+                    ao nosso cliente o máximo de produtividade e desempenho possível.</p>
+            </div>
+            <div class="sobre">
+                <h1 class="h">Praticidade</h1>
+                <img src="img/PraticidadeImg.png">
+                <p class="t">Qual a função da praticidade em nossa empresa?<br></p>
+                <p>Uma das palavras do futuro é praticidade e nós como uma empresa inovadora não poderíamos deixar
+                    isso de lado.
+                    Nossos produtos e serviços sempre ao serem projetados e desenvolvidos são pensados para
+                    conseguir entregar o
+                    máximo de praticidade e qualidade ao nosso cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <h1 class="nos">Nossos valores, missão e visão</h1>
+    <div class="bgus">
+        <div class="valores" data="anime">
+            <h1 class="nval">Valores</h1>
+            <ul class="valist">
+                <li class="val">Ética</li>
+                <li class="val">Respeito</li>
+                <li class="val">Avanço</li>
+                <li class="val">Segurança</li>
+            </ul>
+        </div>
+        <div class="missao">
+            <h1 class="nmis">Missão</h1>
+            <p class="mis">
+                A Autosystem® colabora para um futuro melhor com soluções e tecnologias que garantem a segurança e a
+                organização das pessoas.</p>
+        </div>
+        <div class="visao">
+            <h1 class="nvis">Visão</h1>
+            <p class="mis">
+                A Autosystem® colabora para um futuro melhor com soluções e tecnologias que garantem a segurança e a
+                organização das pessoas.</p>
+        </div>
+    </div>
+
+    <h1 class="us">Nossa Equipe</h1>
+    <section class="equipe">
+        <div>
+            <img class="m" src="img/DanielG.jpg">
+            <p class="nome">Daniel Gomes Martins Junior<br><br>
+                Fundador AutoSystem®<br><br>
+                <a class="lkd" href="https://www.linkedin.com/in/daniel-gomes-a137631a1/">Linkedin</a>
+            </p>
+        </div>
+        <div>
+            <img class="m" src="img/DanielM.jpg">
+            <p class="nome">Daniel Modesto Santos de Almeida<br><br>
+                Fundador AutoSystem®<br><br>
+                <a class="lkd" href="https://www.linkedin.com/in/daniel-modesto-88952a224">Linkedin</a>
+            </p>
+        </div>
+        <div>
+            <img class="m" src="img/David.jpg" height="200px" style="object-fit: cover;">
+            <p class="nome">David Henrique Souza Silva<br><br>
+                Fundador AutoSystem®<br><br>
+                <a class="lkd" href="https://www.linkedin.com/in/davidhss/">Linkedin</a>
+            </p>
+        </div>
+        <div>
+            <img class="m" src="img/Diogo.jpg">
+            <p class="nome">Diogo Da Silva Almeida<br><br>
+                Fundador AutoSystem®<br><br>
+                <a class="lkd" href="https://br.linkedin.com/in/diogo-da-silva-almeida-49640819b">Linkedin</a>
+            </p>
+        </div>
+        <div>
+            <img class="m" src="img/Mateus.jpg">
+            <p class="nome">Mateus Silva <br>Ferreira<br><br>
+                Fundador AutoSystem®<br><br>
+                <a class="lkd" href="https://www.linkedin.com/in/mateus-ferreira-162684231">Linkedin</a>
+            </p>
+        </div>
+        <div>
+            <img class="m" src="img/Matheus.jpg">
+            <p class="nome">Matheus da Silva Santos<br><br>
+                Fundador AutoSystem®<br><br>
+                <a class="lkd" href="https://www.linkedin.com/in/matheus-da-silva-santos/">Linkedin</a>
+            </p>
+        </div>
+
+    </section>
+
+    <!-------------------------------------------------- RODAPÉ ----------------------------------------------------------->
+
+    <footer id="footer">
+
+        <div class="boxs">
+            <h2>Início</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#tudo">Produtos</a></li>
+                <li><a href="#">Ajuda</a></li>
+            </ul>
+        </div>
+
+        <div class="boxs">
+            <h2>Informações</h2>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">autosystem@outlook.com.br</a></li>
+            </ul>
+        </div>
+
+        <div class="boxs">
+            <h2>Suporte</h2>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Telefone</a></li>
+                <li><a href="#">Chat</a></li>
+            </ul>
+        </div>
+
+        <div class="boxs">
+            <h2>Sobre nós</h2>
+            <p>Somos uma empresa que visa a segurança em primeiro lugar. Temos como objetivo manter a segurança do seu
+                estabelecimento de maneira prática, ágil e acessível.</p>
+        </div>
+
+    </footer>
+
+    <div class="footer">
+        <img class="logofoot" src="img/LogoAutoSystemWhite.png">
+        <div class="sociais">
+            <div class="social">
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="social">
+                <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+            <div class="social">
+                <a href="#"><i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 30,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+        });
+    </script>
+
+
+</body>
+
+</html>

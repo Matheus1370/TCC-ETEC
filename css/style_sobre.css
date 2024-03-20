@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CORES */
+:root {
+    --font: #edf0f1;
+    --main1: #ff9f0f;
+    --main2: #f5e93d;
+    --gradient: #fecc01, #facd00;
+    --dark: #100F10;
+    --dark2: #1B1B1B;
+    --dark3: #242424;
+    --bgradient: #100F10, #181818;
+
+}
+
+/* SCROLLBAR PERSONALIZADO */
+::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b3b3b;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #252525;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+/* PRIMEIRA PARTE DO SITE - SOBRE NÓS */
+
+.title {
+    position: relative;
+    color: var(--font);
+    font-size: 30px;
+    width: 155px;
+    bottom: 30px;
+    margin: 0 auto;
+
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    margin-bottom: 70vh;
+}
+
+.container img {
+    filter: brightness(.8);
+    max-width: 100%;
+    height: 200px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    transition: 1s;
+}
+
+.container .sobre {
+    height: 350px;
+    width: 600px;
+    margin: 20px;
+    text-align: justify;
+    border: #fecc01 solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.container .sobre:hover {
+    background-image: linear-gradient(90deg, var(--gradient));
+    height: 600px;
+    width: 800px;
+}
+
+.container .sobre:hover img {
+    filter: brightness(1.2);
+}
+
+.container .sobre:hover p {
+    padding: 10px;
+    display: block;
+    color: var(--dark);
+}
+
+.container .sobre:hover h1 {
+    color: var(--dark);
+    filter: brightness(.8);
+}
+
+.container .sobre:hover .t {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container .sobre h1 {
+    color: var(--main2);
+    font-size: 22px;
+    margin: 20px;
+    text-align: center;
+    transition: 0.5s;
+
+}
+
+.container .sobre p {
+    display: none;
+    transition: 0.5s;
+}
+
+/* SEGUNDA PARTE DO SITE - VALORES */
+
+.nos {
+    position: relative;
+    text-align: center;
+    color: var(--font);
+    bottom: 200px;
+}
+
+.bgus {
+    position: relative;
+    display: flex;
+    margin: auto;
+    align-content: center;
+    max-width: 1290px;
+    max-height: 1600px;
+    margin-bottom: 30vh;
+}
+
+.valores {
+    position: relative;
+    margin: auto;
+    background: linear-gradient(147.16deg, #F5E93D 14.55%, #FF9F0F 66.3%);
+    border-top: solid 50px #F5E93D;
+    border-bottom: solid 50px #FF9F0F;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    top: -80px;
+}
+
+.nval {
+    position: relative;
+    font-size: 30px;
+    font-family: 'Montserrat';
+    color: var(--dark);
+    left: 34%;
+    top: 25%;
+}
+
+.valist {
+    position: relative;
+    list-style: square;
+    font-family: 'Montserrat';
+    top: 35%;
+    left: 40%;
+}
+
+/* MISSÃO */
+
+.missao {
+    position: relative;
+    margin: auto;
+    align-content: center;
+    background: linear-gradient(147.16deg, #F5E93D 14.55%, #FF9F0F 66.3%);
+    border-top: solid 50px #F5E93D;
+    border-bottom: solid 50px #FF9F0F;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    top: -80px;
+}
+
+
+.nmis {
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    top: 25%;
+    font-family: 'Montserrat';
+    color: var(--dark2);
+
+}
+
+.mis {
+    position: relative;
+    list-style: square;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    text-align: center;
+    width: 250px;
+    top: 35%;
+}
+
+/* VISÃO */
+
+.visao {
+    position: relative;
+    margin: auto;
+    align-content: center;
+    background: linear-gradient(147.16deg, #F5E93D 14.55%, #FF9F0F 66.3%);
+    border-top: solid 40px #F5E93D;
+    border-bottom: solid 40px #FF9F0F;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    top: -80px;
+}
+
+.nvis {
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    top: 25%;
+    font-family: 'Montserrat';
+    color: var(--dark2);
+}
+
+/* MEMBROS DA EQUIPE */
+
+.us {
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    color: var(--font);
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.equipe {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    max-width: 1160px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.equipe div p {
+    text-align: right;
+    padding: 10px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    color: var(--font);
+}
+
+.m {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.equipe div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.lkd {
+    text-decoration: none;
+    color: #FF9F0F;
+}
+
+
+
+/* RESPONSIVIDADE TABLET */
+@media screen and (min-width: 769px) and (max-width:1025px) {
+
+    /* PRIMEIRA PARTE - SOBRE NÓS */
+    #content{
+        margin-top: 700px;
+    }
+    .title {
+        left: 18px;
+        bottom: 40px;
+    }
+
+    .prod {
+        padding-left: 70px
+    }
+
+    .right img{
+        bottom: 20vh;
+    }
+
+    .container {
+        bottom: 600px;
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        flex-direction: column;
+        max-width: 668px;
+
+    }
+
+    .container img {
+        height: 50%;
+        padding: 10px;
+    }
+
+    .container .sobre {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .container .sobre:hover {
+        height: 600px;
+        width: 600px;
+    }
+
+
+    .container .sobre:hover img {
+        height: 40%;
+    }
+
+    /* SEGUNDA PARTE - VALORES */
+
+    .bgus {
+        flex-direction: column;
+        flex-grow: 20px;
+        gap: 40px;
+    }
+
+    /* MEMBROS DA EQUIPE */
+
+    .us {
+        font-size: 30px;
+        width: 215px;
+    }
+
+    .equipe {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 40px;
+        max-width: 450px;
+        margin-top: 100px;
+    }
+
+    .equipe div p {
+        text-align: center;
+        color: var(--font);
+    }
+
+    .m {
+        margin-left: 0px;
+        width: 350px;
+        border-radius: 10px;
+    }
+
+    .equipe div {
+        align-content: center;
+        margin: 0 auto;
+        width: 350px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+
+    .lkd{
+        font-size: 40px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .boxs {
+        padding: 20px;
+        width: 100%;
+    }
+
+    footer .boxs:nth-child(1) {
+        position: relative;
+        left: 0px;
+    }
+
+    footer .boxs:nth-child(4) {
+        text-align: center;
+        width: 600px;
+        right: 0px;
+    }
+
+    .boxs p {
+        text-align: center;
+    }
+
+    /* RODAPÉ DO RODAPÉ */
+
+    .footer .sociais {
+        display: flex;
+        top: 450px;
+        right: 10px;
+    }
+
+    .logofoot {
+        height: 40px;
+        display: flex;
+        top: 457px;
+        left: 0px;
+    }
+
+}
+
+/* RESPONSIVIDADE SMARTPHONE */
+@media screen and (max-width:769px) {
+
+    /* PRIMEIRA PARTE - SOBRE NÓS */
+    #content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container .sobre {
+        margin: auto;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .container .sobre:hover {
+        width: 300px;
+        height: 700px;
+    }
+
+    /* SEGUNDA PARTE - VALORES */
+
+    .bgus {
+        flex-direction: column;
+        flex-grow: 20px;
+        gap: 40px;
+    }
+
+    /* MEMBROS DA EQUIPE */
+
+    .us {
+        font-size: 30px;
+        width: 208px;
+        bottom: 40px;
+    }
+
+    .equipe {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 40px;
+        max-width: 350px;
+        margin-top: 00px;
+    }
+
+    .equipe div p {
+        text-align: center;
+        color: var(--font);
+    }
+
+    .m {
+        margin-left: 0px;
+        width: 250px;
+        border-radius: 10px;
+    }
+
+    .equipe div {
+        align-content: center;
+        margin: 0 auto;
+        width: 250px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .boxs {
+        padding: 20px;
+        width: 100%;
+    }
+
+    footer .boxs:nth-child(1) {
+        position: relative;
+        left: 0px;
+    }
+
+    footer .boxs:nth-child(4) {
+        text-align: center;
+        width: 300px;
+        right: 0px;
+    }
+
+    .boxs p {
+        text-align: center;
+        padding-bottom: 70px;
+    }
+
+    /* RODAPÉ DO RODAPÉ */
+
+    .footer .sociais {
+        display: flex;
+        top: 450px;
+        right: 10px;
+    }
+
+    .logofoot {
+        height: 40px;
+        display: flex;
+        top: 457px;
+        left: 0px;
+    }
+}

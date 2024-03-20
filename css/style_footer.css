@@ -1,0 +1,198 @@
+/* RODAPÉ */
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --font: #edf0f1;
+}
+
+footer {
+    position: relative;
+    top: 300px;
+    width: 100%;
+    min-height: 250px;
+    background-color: transparent;
+    display: flex;
+    font-family: 'Montserrat';
+}
+
+footer .boxs {
+    width: 20px;
+    margin: auto;
+    min-height: 150px;
+    padding: 10px;
+}
+
+footer .boxs:nth-child(1) {
+    position: relative;
+    left: 25px;
+}
+
+footer .boxs:nth-child(4) {
+    position: relative;
+    width: 400px;
+    right: 25px;
+}
+
+.boxs h2 {
+    color: var(--font);
+    margin-bottom: 20px;
+}
+
+.boxs ul li {
+    margin: 10px 0px;
+    list-style: none;
+}
+
+.boxs ul li a {
+    color: var(--font);
+    text-decoration: none;
+}
+
+.boxs ul li a:hover {
+    color: #f5e93d;
+}
+
+.boxs p {
+    color: var(--font);
+    text-align: justify;
+}
+
+
+/*RODAPÉ DO RODAPÉ  */
+
+.footer {
+    width: 100%;
+    height: 70px;
+    top: 300px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background-color: transparent;
+}
+
+.logofoot {
+    position: relative;
+    height: 50px;
+    left: 130px;
+}
+
+.footer .sociais {
+    position: relative;
+    display: flex;
+    right: 125px;
+}
+
+.sociais .social {
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.sociais .social a {
+    color: #FFF;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+
+.sociais .social:hover {
+    background: var(--main1);
+}
+
+.sociais .social:hover a {
+    color: #000;
+}
+
+@media screen and (min-width: 769px) and (max-width:1025px) {
+    /* RODAPÉ */
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .boxs {
+        padding: 20px;
+        width: 100%;
+    }
+
+    footer .boxs:nth-child(1) {
+        position: relative;
+        left: 0px;
+    }
+
+    footer .boxs:nth-child(4) {
+        text-align: center;
+        width: 600px;
+        right: 0px;
+    }
+
+    .boxs p {
+        text-align: center;
+    }
+
+    /* RODAPÉ DO RODAPÉ */
+
+    .footer .sociais {
+        display: flex;
+        top: 450px;
+        right: 10px;
+    }
+
+    .logofoot {
+        height: 40px;
+        display: flex;
+        top: 457px;
+        left: 0px;
+    }
+
+}
+
+@media screen and (max-width:769px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .boxs {
+        padding: 20px;
+        width: 100%;
+    }
+
+    footer .boxs:nth-child(1) {
+        position: relative;
+        left: 0px;
+    }
+
+    footer .boxs:nth-child(4) {
+        text-align: center;
+        width: 300px;
+        right: 0px;
+    }
+
+    .boxs p {
+        text-align: center;
+        padding-bottom: 70px;
+    }
+
+    /* RODAPÉ DO RODAPÉ */
+
+    .footer .sociais {
+        display: flex;
+        top: 450px;
+        right: 10px;
+    }
+
+    .logofoot {
+        height: 40px;
+        display: flex;
+        top: 457px;
+        left: 0px;
+    }
+}

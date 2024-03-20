@@ -1,0 +1,211 @@
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.welcome {
+  position: relative;
+  left: 60px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome .box-welcome {
+  min-width: 800px;
+  height: 150px;
+  border-radius: 30px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 40px;
+  position: relative;
+}
+
+.welcome .box-welcome .text-welcome {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 120px;
+  gap: 10px;
+}
+
+.welcome .box-welcome .text-welcome h2 {
+  font-weight: 550;
+}
+
+.welcome .box-welcome .text-welcome strong {
+  color: #de1536;
+  font-weight: 750;
+}
+
+.welcome img {
+  height: 250px;
+  position: absolute;
+  left: 500px;
+}
+
+.container1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  width: 1000px;
+  margin-top: 10px;
+  position: relative;
+  margin-left: 50px;
+  margin-top: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.info .Alunos {
+  width: 230px;
+  height: 130px;
+  background-image: linear-gradient(45deg, #de1536, #ff4c72);
+  border-radius: 10px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-box-shadow: 0 0 5px 0 #de153791;
+          box-shadow: 0 0 5px 0 #de153791;
+}
+
+.info .Alunos h1 {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.info .Alunos h2 {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.info .Alunos:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.info .Alunos:nth-child(2) {
+  background-image: linear-gradient(45deg, #d9d9d9, #fff);
+  color: #222;
+  -webkit-box-shadow: 0 0 5px 0 #1616166c;
+          box-shadow: 0 0 5px 0 #1616166c;
+}
+.info .Alunos:nth-child(4) {
+  background-image: linear-gradient(45deg, #d9d9d9, #fff);
+  color: #222;
+  -webkit-box-shadow: 0 0 5px 0 #1616166c;
+          box-shadow: 0 0 5px 0 #1616166c;
+}
+
+.chart1 {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 380px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  left: 15px;
+}
+
+.chart1 .box-chart1 {
+  min-width: 1000px;
+  height: 450px;
+  border-radius: 30px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 40px;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart1 .box-chart1 #chart_div {
+  margin-left: -10px;
+  width: 1000px;
+  height: 400px;
+}
+
+.container2 {
+  position: relative;
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  padding-bottom: 25px;
+  margin-top: 600px;
+  margin-left: -350px;
+}
+
+.container2 .box-container2 {
+  min-width: 700px;
+  height: 10vh;
+  border-radius: 30px;
+  background-color: white;
+  margin-top: 260px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=style_home.css.map */

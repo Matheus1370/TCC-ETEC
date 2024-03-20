@@ -1,0 +1,51 @@
+------------------------------------------------------------------------------PHP file to receive LED Status Feedback from NodeMCU
+File Name : getLEDStatFromNodeMCU.php
+<?php
+	$getLEDStatusFromNodeMCU=$_POST["getLEDStatusFromNodeMCU"];
+	$Write="<?php $" . "getLEDStatusFromNodeMCU='" . $getLEDStatusFromNodeMCU . "'; " . "echo $" . "getLEDStatusFromNodeMCU;" . " ?>";
+  echo $getLEDStatusFromNodeMCU;
+	file_put_contents('LEDStatContainer.php',$Write);
+?>
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------PHP File to Hold LED Status Feedback from NodeMCU
+File Name : LEDStatContainer.php
+<?php $getLEDStatusFromNodeMCU=''; echo $getLEDStatusFromNodeMCU; ?>
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------Additional code for Main.php file
+<?php
+  $Write="<?php $" . "getLEDStatusFromNodeMCU=''; " . "echo $" . "getLEDStatusFromNodeMCU;" . " ?>";
+  file_put_contents('LEDStatContainer.php',$Write);
+?>
+
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+     $("#getLEDStatus").load("LEDStatContainer.php");
+    setInterval(function() {
+      $("#getLEDStatus").load("LEDStatContainer.php");
+    }, 500);
+  });
+</script>
+
+<h2 id="ledstatus" style="color:#6f4a8e;">LED Status = </h2>
+<p id="getLEDStatus" hidden></p>
+
+<script>
+  var myVar = setInterval(myTimer, 500);
+  function myTimer() {
+    var getLEDStat = document.getElementById("getLEDStatus").innerHTML;
+    var LEDStatus = getLEDStat;
+    if (LEDStatus == 1) {
+      document.getElementById("ledstatus").innerHTML = "LED Status = ON";
+    }
+    if (LEDStatus == 0) {
+      document.getElementById("ledstatus").innerHTML = "LED Status = OFF";
+    }
+    if (LEDStatus == "") {
+      document.getElementById("ledstatus").innerHTML = "LED Status = Waiting for the Status LED from NodeMCU...";
+    }
+  }
+</script>  
+------------------------------------------------------------------------------

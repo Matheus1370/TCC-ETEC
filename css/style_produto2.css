@@ -1,0 +1,262 @@
+/*formata o icone do autosystem que existe no começo dos titulos*/
+
+.icone-autosys {
+    position: relative;
+    top: 7px;
+    right: 10px;
+}
+
+.esquerda {
+    flex-wrap: wrap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 110px;
+    background-color: #0f0f0f;
+}
+
+.direita {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 110px;
+    background-color: #0f0f0f;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*texto do titulo da pagina*/
+
+.titulo {
+    font-size: 45px;
+    
+    margin-top: 250px;
+    color: white;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #0f0f0f;
+    text-align: center;
+    margin: 0;
+    margin-top: 220px;
+    padding-top: 150px;
+    padding-bottom: 50px;
+
+   
+
+}
+
+.subtitulo {
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+#tudo {
+    display: flex;
+    flex-direction: row;
+    background-color: #0f0f0f;
+    font-family: 'Montserrat';
+    align-items: center;
+    align-content: center;
+    margin-bottom: 25vh;
+
+    border-top: 3px, white, inset;
+}
+
+/*Altera o tamanho da primeira letras do titulo do texto*/
+
+.primeiraletra-titulo {
+    font-size: 50px;
+}
+
+
+/*Formata a imagem e adiciona a animação float*/
+
+.joystick {
+
+    animation: float 6s ease-in-out infinite;
+    align-content: center;
+    animation-duration: 5s;
+    margin-left: 10vw;
+    margin-right: auto;
+    margin-bottom: 100px;
+
+
+}
+
+.cubo {
+
+    animation: float 6s ease-in-out infinite;
+    align-items: center;
+    position: relative;
+    margin-left: 10vw;
+    margin-top: 100px;
+    margin-bottom: 20PX;
+
+}
+
+.cadeado {
+    animation: float 6s ease-in-out infinite;
+    align-items: center;
+    position: relative;
+    margin-right: 10vw;
+    margin-bottom: 100px;
+   
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translatey(0)
+    }
+
+    50% {
+        transform: translatey(-40px)
+    }
+}
+
+
+/*Formata o titulo e o texto dos produtos*/
+
+.primeiro-bloco {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #FFD200;
+    letter-spacing: 3px;
+    animation: fadeInDown;
+    animation-duration: 2s;
+    max-width: 720px;
+    min-width: 100px;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.segundo-bloco {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #FFD200;
+    letter-spacing: 3px;
+    animation: fadeInDown;
+    animation-duration: 2s;
+    margin-bottom: 7vW;
+    max-width: 720px;
+    margin-right: auto;
+    margin-bottom: 150px;
+   
+}
+
+.terceiro-bloco {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #FFD200;
+    letter-spacing: 3px;
+    animation: fadeInDown;
+    animation-duration: 2s;
+    margin-bottom: 7vW;
+    max-width: 720px;
+    margin-bottom: 100px;
+    padding-bottom: 150px;
+}
+
+
+/*Formata o texto dos produtos*/
+
+.texto-prod {
+    font-size: 25px;
+    letter-spacing: normal;
+    font-weight: lighter;
+    color: beige;
+    text-align: justify;
+    border: none;
+    background-image: none;
+    padding-top: 12px        ;
+    
+}
+
+
+
+@media screen and (max-width:1025px) {
+
+   #tudo{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    }
+  .joystick{
+    opacity: 0%; 
+    width: 0px;
+    height: 0px;   
+  }
+  .cubo{
+    opacity: 0%;
+    width: 0px;
+    height: 0px;
+
+
+  }.cadeado{
+    opacity: 0%;
+    width: 0px;
+    height: 0px;
+
+  }
+  .primeiro-bloco{
+    position: relative;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 520px;
+    text-align: center;
+    align-content: space-between;
+    padding: 0;
+    padding-bottom: 200px;
+  
+  }
+  .segundo-bloco{
+    position: relative;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 520px;
+    text-align: center;
+    align-content: space-between;
+    padding: 0;
+    margin-top: -150px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+
+  }
+  .terceiro-bloco{
+    position: relative;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 520px;
+    text-align: center;
+    align-content: space-between;
+    padding: 0;
+    padding-bottom: 300px;
+    
+  }
+ 
+  .texto-prod {
+    font-size: 25px;
+    letter-spacing: normal;
+    font-weight: lighter;
+    color: beige;
+    text-align: center;
+    border: none;
+    background-image: none;
+    padding-top: 12px        ;
+    
+}
+
+}

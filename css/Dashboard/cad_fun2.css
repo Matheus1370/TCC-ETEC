@@ -1,0 +1,58 @@
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 35px;
+    padding: 100px;
+    flex-wrap: wrap;
+    position: relative;
+    padding-left: 300px;
+}
+
+.cardFunc{
+    display: flex;
+    height: 200px;
+    width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #e32636;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.34);
+    transition: .3s;
+}
+
+.cardFunc p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 2.2em;
+    color: #fff;
+    text-shadow: 0 0 3px white;
+}
+
+.cardFunc input{
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-bottom: -50px;
+    background-color: white;
+    font-weight: bold;
+    color: #5b5b5b;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.cardFunc input:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 1445px){
+    .inicio{
+        padding-left: 0 !important;
+        padding: 30px;
+    }
+}

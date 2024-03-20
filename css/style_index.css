@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&family=Poppins&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+:root {
+    --main1: #ff9f0f;
+    --main2: #f5e93d;
+    --dark: #100F10;
+    --dark2: #1B1B1B;
+    --dark3: #242424;
+}
+
+/* SCROLLBAR PERSONALIZADO */
+::-webkit-scrollbar {
+    width: 0.6vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b3b3b;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #252525;
+}
+
+
+/* Começo do Site */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    height: 78vh;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.prod {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 200px;
+    font-size: 20px;
+    z-index: 29;
+}
+
+.prod h2 {
+    padding-bottom: 10px;
+    font-size: 35px;
+}
+
+.container-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.comeco {
+    position: relative;
+    height: 82vh;
+    width: 100%;
+}
+
+.right img {
+    height: 650px;
+    margin-top: 80px;
+}
+
+
+/* Código do botão Saiba Mais */
+.saiba {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--main2);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 550;
+    color: var(--main2);
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.saiba:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--main2);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.saiba:hover {
+    color: rgb(31, 31, 31);
+    box-shadow: 0 0 10px 0 #fff45a;
+    transition: .5s;
+}
+
+.saiba:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+.saiba:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.saiba:active:before {
+    background: rgb(255, 218, 10);
+    transition: background 0s;
+}
+
+
+/* Efeitos do Fundo */
+.effect {
+    border-radius: 75% 25% 74% 26% / 23% 81% 19% 77%;
+    background-image: linear-gradient(0deg, var(--main1), var(--main2));
+    height: 150px;
+    width: 150px;
+    filter: blur(3px);
+    position: absolute;
+    top: 130px;
+    left: 200px;
+    transition: .5s;
+    z-index: 0;
+}
+
+.effect1 {
+    border-radius: 48% 52% 35% 65% / 59% 58% 42% 41%;
+    background-image: linear-gradient(90deg, var(--main1), var(--main2));
+    height: 200px;
+    width: 200px;
+    filter: blur(5px);
+    position: absolute;
+    left: 30px;
+    transition: .5s;
+    top: 90%;
+    z-index: -1;
+}
+
+.effect2 {
+    border-radius: 12% 88% 19% 81% / 40% 34% 66% 60%;
+    background-image: linear-gradient(0deg, var(--main1), var(--main2));
+    height: 200px;
+    width: 200px;
+    filter: blur(2px);
+    position: absolute;
+    transition: .5s;
+    top: 80%;
+    left: 85%;
+    z-index: 0;
+}
+
+.effect3 {
+    border-radius: 68% 32% 21% 79% / 85% 13% 87% 15%;
+    background-image: linear-gradient(30deg, var(--main1), var(--main2));
+    height: 90px;
+    width: 90px;
+    filter: blur(1px);
+    position: absolute;
+    top: 80%;
+    transition: .5s;
+    left: 48%;
+    z-index: 0;
+}
+
+.effect4 {
+    border-radius: 69% 31% 70% 30% / 81% 45% 55% 19%;
+    background-image: linear-gradient(30deg, var(--main1), var(--main2));
+    height: 70px;
+    width: 70px;
+    filter: blur(3px);
+    position: absolute;
+    transition: .5s;
+    top: 20%;
+    left: 90%;
+    z-index: 0;
+}
+
+
+/* Segunda parte do Site */
+
+/* Video de Fundo */
+.segunda {
+    top: 180px;
+    position: relative;
+    height: 400px;
+}
+
+.backvideo {
+    position: relative;
+    right: 0;
+    z-index: -1;
+    filter: grayscale(100);
+    opacity: 20%;
+    width: 100%;
+}
+
+.content-seg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    gap: 20px;
+    bottom: 50px;
+}
+
+.content-seg h1 {
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.content-seg p {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 70px 30px;
+}
+
+
+/* Terceira Parte do Site (Cards) */
+
+.container-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    top: 150px;
+}
+
+.container-card .card {
+    width: 390px;
+    height: 550px;
+    margin: 50px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    top: 110px;
+}
+
+.container-card .card .content-card {
+    padding: 20px;
+    text-align: center;
+    transition: .5s;
+    top: 50%;
+    left: 50%;
+}
+
+.container-card .card .content-card img {
+    height: 220px;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.container-card .card .content-card h3 {
+    font-size: 1.9em;
+    color: #fff;
+    z-index: 1;
+}
+
+.container-card .card .content-card p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 200;
+    padding: 20px 10px;
+    transform: translateZ(20px);
+}
+
+.container-card .card .content-card a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 28px;
+    margin-top: 15px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 30em;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    z-index: 1;
+    transition: .5s;
+}
+
+.container-card .card .content-card a:hover {
+    background-color: rgb(225, 224, 224);
+}
+
+/* RESPONSIVIDADE TABLET */
+
+@media screen and (min-width: 769px) and (max-width:1025px) {
+
+
+    /* Começo do Site */
+
+
+    .right img {
+        position: absolute;
+        margin: auto;
+        left: 330px;
+        bottom: 20px;
+        height: 40vh;
+    }
+
+    .prod {
+        text-align: left;
+    }
+
+    .left {
+        margin-left: 0%;
+        margin-right: 20%;
+    }
+
+    /* Efeitos do Fundo */
+
+    .effect {
+        display: none;
+    }
+
+    .effect2 {
+        display: none;
+    }
+
+    .content-seg {
+        top: 150px;
+    }
+
+    .content-seg h1 {
+        font-size: 32px;
+    }
+
+    .content-seg p {
+        max-width: 600px;
+        font-size: 20px;
+    }
+
+    /* Video de Fundo */
+
+    .videozin {
+        display: none;
+    }
+
+    .banner {
+        margin-top: 300px;
+    }
+}
+
+@media screen and (max-width:769px) {
+
+    /* Começo do Site */
+
+    .saiba {
+        margin-left: 0px;
+    }
+
+    .right img {
+        position: absolute;
+        margin: auto;
+        margin-bottom: 20px;
+        left: 6rem;
+        bottom: 70px;
+        height: 40vh;
+    }
+
+    .prod {
+        text-align: left;
+    }
+
+    .left {
+        margin-left: 25%;
+        margin-top: 260px;
+    }
+
+    /* Efeitos do Fundo */
+
+    .effect {
+        display: none;
+    }
+
+    .effect1 {
+        display: none;
+    }
+
+    .effect2 {
+        display: none;
+    }
+
+    .effect3 {
+        display: none;
+    }
+
+    .effect4 {
+        display: none;
+    }
+
+    /* SEGUNDA PARTE */
+
+    .content-seg {
+        top: 300px;
+    }
+
+    .content-seg h1 {
+        font-size: 30px;
+    }
+
+    .content-seg p {
+        max-width: 600px;
+        font-size: 18px;
+    }
+
+    .container-card .card {
+        height: 600px;
+    }
+
+    /* Video de Fundo */
+
+    .videozin {
+        display: none;
+    }
+
+    .banner {
+        margin-top: 500px;
+    }
+}

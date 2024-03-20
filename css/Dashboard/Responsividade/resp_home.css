@@ -1,0 +1,70 @@
+@media (max-width: 1780px) {
+    .main {
+        background: linear-gradient(45deg, #f7f7f7, rgb(221, 221, 221));
+    }
+    .container1{
+        background: transparent;
+        padding-left: 0;
+    }
+    .calendar-days div{
+        padding: 15px 30px !important;
+        width: 20px;
+    }
+    #principal .content-table {
+        min-width: 500px;
+      }
+      #principal{
+        right: 50px;
+      }
+      .calendar{
+          right: 50px;
+      }
+}
+
+@media (max-width: 1450px){
+    main{
+        left: 0;
+        width: 100%;
+    }
+    .container1{
+        width: 60% !important;
+        padding-left: 80px;
+    }
+    .container2{
+        width: 30% !important;
+    }
+    .calendar-days div{
+        padding: 15px 30px !important;
+    }
+    .media{
+        height: 440px;
+    }
+    .tabelinha{
+        height: 330px !important;
+      }
+}
+
+@media (max-width: 1315px){
+    main{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .container1{
+        width: 500px !important;
+        padding-left: 0 !important;
+        margin-left: -155px;
+    }
+    .container2{
+        width: 500px !important;
+        padding-left: 80px !important;
+        height: 100%;
+    }
+}
+
+@media (max-width: 610px){
+    main{
+        transform: scale(.8);
+        margin-top: -180px;
+    }
+}
